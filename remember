@@ -1,0 +1,5 @@
+
+100px固定宽高的div，里面有未知个文字(一行或者多行)，用css实现水平垂直居中
+
+方法一: div{display:table-ceil;vertical-aline:middle;text-align:center}
+方法二：div{display:flex;align-items:center;text-align:center;}
