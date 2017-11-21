@@ -1,13 +1,13 @@
 
-100px固定宽高的div，里面有未知个文字(一行或者多行)，用css实现水平垂直居中
+*****100px固定宽高的div，里面有未知个文字(一行或者多行)，用css实现水平垂直居中*****
 
 方法一: div{display:table-ceil;vertical-aline:middle;text-align:center}
 方法二：div{display:flex;align-items:center;text-align:center;}
 
-web前端 流行3大框架 vue.js angular.js node.js
+*****web前端 流行3大框架 vue.js angular.js node.js*****
 
 
-html运用(三) html如何禁止(表单)用户名、密码自动填充
+******html运用(三) html如何禁止(表单)用户名、密码自动填充******
 
  html登录表单经常被自动填充，有的甚至用户从来没有登录过的网站也会有自动填充，甚是让人讨厌。
 
@@ -53,3 +53,40 @@ Mozilla developer documentation 建议使用表单设置属性 tautocomplete=”
 Summary
 
 使用了最后一种方案后在各个浏览器中运行良好，暂时没发现出现自动填充的现象。果然前端的兼容性问题一直是一件让人恶心的事啊。。
+
+
+******<input type="file" />浏览时只显示指定文件类型**********
+
+这个就可以实现选择具体的数据类型，但是有兼容问题，我在测试的时候只有Opera，Chrome能用，火狐和IE都不兼容
+在这里如果想支持多种类型的话，比如金山的office和microsoft的office的不同扩展名，这样的话可以在accept里面放置多个属性就可以了：
+<form> <input type="file" name="pic" id="pic" accept="image/gif, image/jpeg" /></form>
+如果不限制图像的格式，可以写为：accept="image/*"。
+
+<input type="file" accept="application/msword" ><br><br>accept属性列表<br> 
+1.accept="application/msexcel"
+2.accept="application/msword"
+3.accept="application/pdf"
+4.accept="application/poscript"
+5.accept="application/rtf"
+6.accept="application/x-zip-compressed"
+7.accept="audio/basic"
+8.accept="audio/x-aiff"
+9.accept="audio/x-mpeg"
+10.accept="audio/x-pn/realaudio"
+11.accept="audio/x-waw"
+12.accept="image/gif"
+13.accept="image/jpeg"
+14.accept="image/tiff"
+15.accept="image/x-ms-bmp"
+16.accept="image/x-photo-cd"
+17.accept="image/x-png"
+18.accept="image/x-portablebitmap"
+19.accept="image/x-portable-greymap"
+20.accept="image/x-portable-pixmap"
+21.accept="image/x-rgb"
+22.accept="text/html"
+23.accept="text/plain"
+24.accept="video/quicktime"
+25.accept="video/x-mpeg2"
+26.accept="video/x-msvideo"
+
