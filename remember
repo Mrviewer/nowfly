@@ -36,3 +36,20 @@ Mozilla developer documentation 建议使用表单设置属性 tautocomplete=”
 
 
 经过测试，各种浏览器都支持。至此，问题算是解决了。
+
+最终解决方案
+
+这个方案结合了上面两种方法，最终连Chrome 47.0下自动填充的问题也解决掉。
+
+    <!-- 额外增加的内容 -->  
+    <form style="display:none">  
+      <input type="password"/>  
+    </form>  
+    <input type="password" style="width:0;height:0;float:left;visibility:hidden"/>  
+    <!-- 原先的input -->  
+    <input type="password"/>  
+
+这个方法中需要注意的是与目标input同辈的input不能设置成 display:none，如果设置后再Chrome 47.0上会自动填充，因此只能使用其他手段把这个input隐藏。
+Summary
+
+使用了最后一种方案后在各个浏览器中运行良好，暂时没发现出现自动填充的现象。果然前端的兼容性问题一直是一件让人恶心的事啊。。
