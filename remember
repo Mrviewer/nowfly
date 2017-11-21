@@ -3,3 +3,36 @@
 
 方法一: div{display:table-ceil;vertical-aline:middle;text-align:center}
 方法二：div{display:flex;align-items:center;text-align:center;}
+
+web前端 流行3大框架 vue.js angular.js node.js
+
+
+html运用(三) html如何禁止(表单)用户名、密码自动填充
+
+ html登录表单经常被自动填充，有的甚至用户从来没有登录过的网站也会有自动填充，甚是让人讨厌。
+
+Mozilla developer documentation 建议使用表单设置属性 tautocomplete=”off” 来阻止浏览器从cache获取数据填充登录表单。
+
+    <input type="text" name="foo" autocomplete="off" />  
+
+但是这种方案不兼容某些Chrome、Firefox。
+
+最终决定使用使用隐藏input来接受浏览器自动填充，这样不会影响用户体验，也可以兼容所有浏览器。
+
+    <input style="display:none"><!-- for disable autocomplete on chrome -->  
+    <input type="text" id="username"  name="username"  autocomplete="off">  
+
+
+下面推荐一种比较靠谱的方案:
+
+最后在不断的尝试过程中，发现浏览器填充密码的方式，那就是:
+
+找到页面上第一个type为password的input填充。发现了这个规律后，很自然的就想到了;
+
+是不是可以在真正的password前面加一个隐藏的password,形式如下：
+
+    <input type="password" name="password1"  style="display:none"/>   
+    <input type="password" name="password" />   
+
+
+经过测试，各种浏览器都支持。至此，问题算是解决了。
